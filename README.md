@@ -1,8 +1,8 @@
 【About】
 This program displays value of registers right after bios program. (but only for x86 architecture)
 From top to bottom are "EAX, ECX, EDX, EBX, ESI, EDI, EBP, ES".
-The values ​​of CS, DS, SS and ESP cannot be displayed. (Because the values ​​of these registers are not guaranteed in this program)
-I thought I shouldn't choose a boot disk, but for some reason I couldn't boot from the CDROM.
+The values of CS, DS, SS and ESP cannot be displayed. (Because the values of these registers are not guaranteed in this program)
+I thought this program can be used on various boot disk, but for some reason I couldn't boot from the CDROM.
 
 【How to use】
 First, if you execute "make run" in "Check_Bios_Regs directory", an image file called DEBUG.img will be created in the current directory.
