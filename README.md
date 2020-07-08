@@ -1,4 +1,21 @@
-BIOS‚©‚ç‹N“®‚µ‚½’¼Œã‚ÌƒŒƒWƒXƒ^‚Ì“à—e‚ğ•\¦‚·‚éƒvƒƒOƒ‰ƒ€B
-ã‚©‚ç‡”Ô‚ÉuEAX, ECX, EDX, EBX, ESI, EDI, EBP, ESv‚Å‚ ‚éB
-CS, DS, SS, ESP‚Ì’l‚Í•\¦‚·‚é‚±‚Æ‚ª‚Å‚«‚È‚¢B(‚È‚º‚È‚çA‚±‚ê‚ç‚ÌƒŒƒWƒXƒ^‚Ì’l‚Í‚±‚ÌƒvƒƒOƒ‰ƒ€‚É‚¨‚¢‚Ä•ÛØ‚³‚ê‚Ä‚¢‚È‚¢‚½‚ß)
-‹N“®ƒfƒBƒXƒN‚Í‘I‚Î‚È‚¢‚Í‚¸...‚Æv‚Á‚½‚ªA‚È‚º‚©CDROM‚©‚ç‚Ì‹N“®‚É¸”s‚µ‚½B
+ã€Aboutã€‘
+This program displays value of registers right after bios program. (but only for x86 architecture)
+From top to bottom are "EAX, ECX, EDX, EBX, ESI, EDI, EBP, ES".
+The values â€‹â€‹of CS, DS, SS and ESP cannot be displayed. (Because the values â€‹â€‹of these registers are not guaranteed in this program)
+I thought I shouldn't choose a boot disk, but for some reason I couldn't boot from the CDROM.
+
+ã€How to useã€‘
+First, if you execute "make run" in "Check_Bios_Regs directory", an image file called DEBUG.img will be created in the current directory.
+Then somehow write DEBUG.img to the first sector of the boot disk.
+Finally, after setting the startup disk priority with Bios, start the PC.
+
+ã€ã“ã®ãƒ—ãƒ­ã‚°ãƒ©ãƒ ã«ã¤ã„ã¦ã€‘
+BIOSã‹ã‚‰èµ·å‹•ã—ãŸç›´å¾Œã®ãƒ¬ã‚¸ã‚¹ã‚¿ã®å†…å®¹ã‚’è¡¨ç¤ºã™ã‚‹ãƒ—ãƒ­ã‚°ãƒ©ãƒ ã€‚
+ä¸Šã‹ã‚‰é †ç•ªã«ã€ŒEAX, ECX, EDX, EBX, ESI, EDI, EBP, ESã€ã‚’è¡¨ç¤ºã—ã¾ã™ã€‚
+æ®‹å¿µãªãŒã‚‰ã€CS, DS, SS, ESPã®å€¤ã¯è¡¨ç¤ºã™ã‚‹ã“ã¨ãŒã§ããªã„ã§ã™ã€‚
+èµ·å‹•ãƒ‡ã‚£ã‚¹ã‚¯ã¯é¸ã°ãªã„ã¯ãš...ã¨æ€ã„ã¾ã—ãŸãŒã€ãªãœã‹CDROMã‹ã‚‰ã®èµ·å‹•ã«å¤±æ•—ã—ã¾ã—ãŸã€‚
+
+ã€ä½¿ã„æ–¹ã€‘
+ã¾ãšã€Check_Bios_Regsãƒ‡ã‚£ãƒ¬ã‚¯ãƒˆãƒªã«ç§»å‹•ã—ãŸå¾Œã€ã€Œmake runã€ã‚’è¡Œã„ã€DEBUG.imgã‚’ä½œæˆã—ã¾ã™ã€‚
+æ¬¡ã«ä½•ã‚‰ã‹ã®æ–¹æ³•ã§èµ·å‹•ãƒ‡ã‚£ã‚¹ã‚¯ã®å…ˆé ­ã‚»ã‚¯ã‚¿ã«DEBUG.imgã‚’æ›¸ãè¾¼ã¿ã¾ã™ã€‚
+æœ€å¾Œã«Biosã§èµ·å‹•ãƒ‡ã‚£ã‚¹ã‚¯ã®ãƒ—ãƒ©ã‚¤ã‚ªãƒªãƒ†ã‚£ãƒ¼ã‚’è¨­å®šã—ãŸå¾Œã€PCã‚’èµ·å‹•ã—ã¾ã™ã€‚

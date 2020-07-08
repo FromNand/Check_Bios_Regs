@@ -2,13 +2,15 @@ SRC=ipl.s
 LS=ipl.ls
 IMG=DEBUG.img
 
-img: $(SRC) $(LS)
-	@gcc -nostdlib -T$(LS) $(SRC) -o $(IMG)
+.SILENT:
+
+$(IMG): $(SRC) $(LS)
+	gcc -nostdlib -T$(LS) $(SRC) -o $(IMG)
 
 run: $(IMG)
-	qemu-system-i386 -fda $?				# FDDから起動
-	@@qemu-system-i386 -hda $?				# HDDから起動
-	@@qemu-system-i386 -cdrom $?				# CDROMから起動
+	qemu-system-i386 -fda $(IMG)				# FDD
+	qemu-system-i386 -hda $(IMG)				# HDD
+	qemu-system-i386 -cdrom $(IMG)				# CDROM
 
-clean:
-	@rm -f $(IMG)
+clean: $(IMG)
+	rm -f $(IMG)
