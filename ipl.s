@@ -18,7 +18,7 @@
 
 start:					# Main function.
 	sti				# In case Bios forgets to do sti.
-	ljmpw	$0x0, $debug		# Set 0x7c0 to cs. (if you change init_regs part to debug, then you can debug this program.)
+	ljmpw	$0x0, $init_regs	# Set 0x7c0 to cs. (if you change init_regs part to debug, then you can debug this program.)
 
 debug:					# You can debug this program by uncommenting this part.
 	movl	$0x12345678, %eax
