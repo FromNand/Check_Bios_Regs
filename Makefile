@@ -4,13 +4,12 @@ IMG=DEBUG.img
 
 .SILENT:
 
-$(IMG): $(SRC) $(LS)
+img: $(SRC) $(LS)
 	gcc -nostdlib -T$(LS) $(SRC) -o $(IMG)
 
-run: $(IMG)
-	qemu-system-i386 -fda $(IMG)				# FDD
-	qemu-system-i386 -hda $(IMG)				# HDD
-	qemu-system-i386 -cdrom $(IMG)				# CDROM
+run: img
+	qemu-system-i386 -fda $(IMG)						# Boot from FDD.
+	qemu-system-i386 -drive file=$(IMG),format=raw,index=0,media=disk	# Boot from HDD.
 
-clean: $(IMG)
+clean:
 	rm -f $(IMG)
