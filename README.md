@@ -10,6 +10,7 @@ I thought this program can be used on various boot disk. (e.g. HDD, Floppy, USB,
 First, if you execute "make" in "Check_Bios_Regs" directory, an image file called DEBUG.img will be created.
 Then somehow write DEBUG.img to the first sector of the boot disk. (e.g. dd command)
 Finally, after setting the startup disk priority with Bios, start the PC.
+If you are trying to boot from a CD and you get an error with the CD burning tool, try using check_bios_regs_for_cd.img.
 
 【このプログラムについて】
 BIOSから起動した直後のレジスタの内容を表示するプログラム。
@@ -19,9 +20,10 @@ BIOSから起動した直後のレジスタの内容を表示するプログラ�
 プログラムの内容について知りたい方はipl.sを読んでもらうといいと思います。
 
 【使い方】
-まず、Check_Bios_Regsディレクトリに移動した後、「make」を行い、DEBUG.imgを作成します。
-次に何らかの方法で起動ディスクの先頭セクタにDEBUG.imgを書き込みます。(ddコマンドなど)
+まず、Check_Bios_Regsディレクトリに移動した後、「make」を行い、check_bios_regs.imgを作成します。
+次に何らかの方法で起動ディスクの先頭セクタにcheck_bios_regs.imgを書き込みます。(ddコマンドなど)
 最後にBiosで起動ディスクのプライオリティーを設定した後、PCを起動します。
+もしあなたがCDを用いたブートを行おうとしていて、CDに焼くためのツールにエラーが発生する場合はcheck_bios_regs_for_cd.imgを使用してみてください。
 
 【作者メモ】
 ・USBについてはRufusで単純に書き込めば良い
