@@ -6,7 +6,7 @@ I thought I shouldn't choose a boot disk, but for some reason I couldn't boot fr
 
 【How to use】
 First, if you execute "make run" in "Check_Bios_Regs directory", an image file called DEBUG.img will be created in the current directory.
-Then somehow write DEBUG.img to the first sector of the boot disk.
+Then somehow write DEBUG.img to the first sector of the boot disk. (e.g. dd command)
 Finally, after setting the startup disk priority with Bios, start the PC.
 
 【このプログラムについて】
@@ -17,5 +17,5 @@ BIOSから起動した直後のレジスタの内容を表示するプログラ�
 
 【使い方】
 まず、Check_Bios_Regsディレクトリに移動した後、「make run」を行い、DEBUG.imgを作成します。
-次に何らかの方法で起動ディスクの先頭セクタにDEBUG.imgを書き込みます。
+次に何らかの方法で起動ディスクの先頭セクタにDEBUG.imgを書き込みます。(ddコマンドなど)
 最後にBiosで起動ディスクのプライオリティーを設定した後、PCを起動します。
